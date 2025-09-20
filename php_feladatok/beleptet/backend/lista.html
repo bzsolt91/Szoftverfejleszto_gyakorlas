@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    th, td {
+      border: 1px solid #999;
+      padding: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+<div id="filters">
+  <label>Név: <input type="text" id="nev" oninput="frissit()"></label>
+  <label>Min. születési év: <input type="number" id="szulEv" oninput="frissit()"></label>
+  <label>Max. halálozási év: <input type="number" id="halEv" oninput="frissit()"></label>
+</div>
+
+<div id="results">
+  <!-- A PHP backend ide tölti be a táblázatot -->
+</div>
+
+</body>
+</html>

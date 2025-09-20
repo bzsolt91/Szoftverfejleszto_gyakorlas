@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bejelentkezés</title>
+</head>
+<body>
+    <h2>Bejelentkezés</h2> 
+    <form >
+        <input type="text" name="username" id="username" placeholder="Felhasználónév">
+        <input type="password" name="password" id="password" placeholder="Jelszó">
+        <button type="button" onclick="login()">Bejelentkezés héttér folyamattal</button>
+    </form>
+    <div id="hiba_ablak"></div>
+    
+    
+    <div id="tartalom">
+
+    <script>
+        function login() {
+    var xhr = new XMLHttpRequest();
+    var formData = new FormData();
+
+    formData.append("username", document.getElementById("username").value);
+    formData.append("password", document.getElementById("password").value);
+
+    xhr.open("POST", "beleptet2.php", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                if (xhr.responseText === "success") {
+                    document.getElementById("tartalom").innerHTML = xhr.responseText;
+
+                } else {
+                    document.getElementById("tartalom").innerHTML = xhr.responseText;
+                }
+            }
+        }
+    };
+    xhr.send(formData);
+}
+
+function closeError() {
+    document.getElementById("hiba_ablak").style.display = "none";
+}
+
+    
+        function beleir()
+        {
+            var tartalomdoboz = document.getElementById("tartalom");
+            tartalomdoboz.innerHTML += "szia";
+        }
+        function hiba(hibaszoveg)
+        {
+            var tartalomdoboz = document.getElementById("hiba_ablak");
+            tartalomdoboz.innerHTML= hibaszoveg +"<br>"+"<input type=\"button\" onclick=\"bezar()\" value=\"bezár\">";
+
+            document.getElementById("hiba_ablak").style.display = "block";
+        }
+        function bezar()
+        {
+            var tartalomdoboz = document.getElementById("hiba_ablak");
+            
+            document.getElementById("hiba_ablak").style.display = "none";  
+        }
+    </script>
+    <style>
+        #hiba_ablak {
+   display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(25, 0, 255, 0.9);
+    color: white;
+    padding: 50px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+    </style>
+</body>
+</html>

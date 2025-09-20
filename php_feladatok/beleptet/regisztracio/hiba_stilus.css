@@ -1,0 +1,22 @@
+#hiba_ablak {
+    display: none;
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background-color: rgb(184, 92, 92);
+     color: white;
+     padding: 50px;
+     border-radius: 5px;
+     text-align: center;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+ }
+ #hiba_gomb {
+    background-color: #da3c0d;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }

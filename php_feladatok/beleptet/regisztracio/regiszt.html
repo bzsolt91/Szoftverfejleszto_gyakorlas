@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hiba_stilus.css">
+    <script src="hiba_tool.js" defer></script>
+</head>
+<body>
+  <div id="hiba_ablak">
+    <div id="tartalom">
+
+      <button id="hiba_gomb" name="hiba_gomb" onclick="beleir()">Gomb</button>
+        
+  </div>
+  </div>
+    <form onsubmit="return validateForm()" method="post" action="regiszt.php">
+        <label for="nickname">Nicknév:</label>
+        <input type="text" name="nickname" id="nickname" ><br>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" ><br>
+        <label for="password">Jelszó:</label>
+        <input type="password" name="password" id="password" ><br>
+    
+        <label for="passwordConfirm">Jelszó ismét:</label>
+        <input type="password" name="passwordConfirm" id="passwordConfirm" ><br>
+    
+        <label for="radio">Nem:</label>
+        <input type="radio" name="gender" value="férfi"> Férfi
+        <input type="radio" name="gender" value="nő"> Nő<br>
+    
+        <label for="date">Születési dátum:</label>
+        <input type="date" name="birthDate" id="birthDate" ><br>
+    
+        <label for="birthPlace">Születési hely:</label>
+        <input type="text" name="birthPlace" id="birthPlace" ><br>
+    
+        <button type="submit" >Regisztráció</button>
+    </form>
+    <style>
+    
+        
+        body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="password"],
+input[type="date"],
+input[type="text"] {
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Fontos, hogy a padding és a border ne növelje a szélességet */
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+
+}
+
+    </style>
+    <script >
+
+
+        function checkEmail() {
+  let email = document.getElementById('email').value;
+  let xhr = new XMLHttpRequest();
+  xhr.open('POST', 'email_check.php', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      if (xhr.responseText === 'foglalt') {
+        alert('Ez az email cím már foglalt!');
+      }
+    }
+  };
+  xhr.send('email=' + encodeURIComponent(email));
+}
+        function validateForm() {
+  let email = document.getElementById('email').value;
+  let nickname = document.getElementById('nickname').value;
+  let password = document.getElementById('password').value;
+  let passwordConfirm = document.getElementById('passwordConfirm').value;
+  let gender = document.querySelector('input[name="gender"]:checked');
+  let birthDate = document.getElementById('birthDate').value;
+  let birthPlace = document.getElementById('birthPlace').value;
+  var today = new Date().toISOString().split("T")[0];
+
+  if (!email.includes('@')) {
+    hiba('Az email cím nem érvényes!');
+    return false;
+  }
+  if (!nickname || !password || !passwordConfirm || !birthDate || !birthPlace) {
+    hiba('Minden mezőt ki kell tölteni!');
+    return false;
+  }
+  if (password !== passwordConfirm) {
+    hiba('A két jelszó nem egyezik!');
+    return false;
+  }
+  if(!gender)
+  {
+    hiba('válasszon nemet');
+    return false;
+  }
+  if (birthDate > today) {
+    hiba('A születési dátum nem lehet a jövőben!');
+    return false;
+}
+return true;
+        }
+    </script>
+</body>
+</html>
