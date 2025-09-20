@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reszponzív példa</title>
+    <style>
+        body{
+        font-family: Arial,sans-serif;
+        margin: 0;
+        padding: 0;
+        }
+
+        .container
+        {
+            padding: 20px;
+            background-color: #eee;
+
+        }
+        .box {
+  background: #2196f3;
+  color: white;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+/* MEDIA QUERY: mobil < 600px */
+@media (max-width: 599px) {
+  .box {
+    background: #58110c; /* sötétpiros lesz mobilon */
+  }
+}
+
+/* TABLET: 600px - 1023px */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .box {
+    background: orange; 
+  }
+}
+
+/* KISEBB DESKTOP: 1024px - 1439px */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .box {
+    background: green; 
+  }
+}
+ 
+/* Oszlopba rendezés */
+.column {
+  flex-direction: column;
+}
+
+/* Középre igazítás */
+.centered {
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Ez egy doboz</div>
+    </div>
+</body>
+</html>
