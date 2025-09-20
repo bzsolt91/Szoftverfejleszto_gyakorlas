@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Számológép CSS-el</title>
+    <script>
+        function valaszt() {
+
+            muv = document.getElementById("sel_muvelet").value;
+            szam1 = document.getElementById("lb_szam1");
+            szam2 = document.getElementById("lb_szam2");
+            eredmeny = document.getElementById("lb_eredmeny");
+            document.getElementById("tb_szam1").value = "";
+            document.getElementById("tb_szam2").value = "";
+            document.getElementById("tb_eredmeny").value = "";
+            switch (muv) {
+                case "1": szam1.textContent = "1. tag";
+                    szam2.textContent = "2. tag";
+                    eredmeny.textContent = "Összeg";
+                    break;
+                case "2": szam1.textContent = "Kisebbítendő";
+                    szam2.textContent = "Kivonandó";
+                    eredmeny.textContent = "Különbség";
+                    break;
+                case "3": szam1.textContent = "1. tényező";
+                    szam2.textContent = "2. tényező";
+                    eredmeny.textContent = "Szorzat";
+                    break;
+                case "4": szam1.textContent = "Osztandó";
+                    szam2.textContent = "Osztó";
+                    eredmeny.textContent = "Hányados";
+                    break;
+            }
+        }
+
+        function szamol() {
+            muv = document.getElementById("sel_muvelet").value;
+            szam1 = parseInt(document.getElementById("tb_szam1").value);
+            szam2 = parseInt(document.getElementById("tb_szam2").value);
+            eredmeny = document.getElementById("tb_eredmeny");
+            switch (muv) {
+                case "1":
+                    osszeg = szam1 + szam2;
+                    eredmeny.value = osszeg;
+                    break;
+                case "2":
+                    kulonbseg = szam1 - szam2;
+                    eredmeny.value = kulonbseg;
+                    break;
+                case "3":
+                    szorzat = szam1 * szam2;
+                    eredmeny.value = szorzat;
+                    break;
+                case "4":
+                    hanyados = szam1 / szam2;
+                    eredmeny.value = hanyados;
+                    break;
+            }
+        }
+    </script>
+    <style>
+        /*
+        A kinézete talán nem túl esztétikus, de mindhárom css-hivatkozás-féle benne van. ;)
+        */
+
+        body {
+            display: flex; /* Próbáld átméretezni az ablakot! :) */
+            flex-direction: column;
+            /* A div-ek egymás alatt helyezkedjenek el */
+            justify-content: center;
+            /* Függőleges középre igazítás */
+            align-items: center;
+            /* Vízszintes középre igazítás */
+            background: linear-gradient(to bottom, rgb(160, 236, 246), rgb(200, 251, 71));
+            height: 100vh;
+            /* hogy az egész képernyőt kitöltse */
+            margin: 0;
+            /* hogy ne legyen fehér margó */
+        }
+
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+        }
+
+        div {
+            width: 250px;
+            margin: 10px;
+            display: flex; 
+            /* Flexbox a div-en belül */
+            justify-content: right;
+            /* Vízszintes jobbra */
+            align-items: center;
+            /* Függőleges középre */
+            font-size: 18px;
+            font-weight: bold;            
+        }
+
+        label {
+            display: inline-block;
+            /* Szélesség beállításához szükséges */
+            width: 120 px;
+            text-align: right; /* Igazítás jobbra.*/
+            margin-right: 10px;
+            /* Távolság a textbox-tól */
+        }
+
+        input {
+            width: 150px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }        
+
+        /*
+        A talán következő muataja a kászkádolás lényegét legjobban.
+        A div-ekre már vonatkoztak beállítások, de itt egyet felüldefiniálok a többi megtartásával.
+        */
+        .div_kozep {
+            justify-content: center;
+            /* Vízszintes középre */
+        }
+
+        #sel_muvelet{
+            background-color: bisque; /* Háttér színe.*/
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            color:brown;
+        }
+
+        #bt_kiszamol {
+            width: 100px; /* Szélesség. */
+            /* Font-beállítások: */
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 20px;
+            color: black; /* Betűszín. */
+            background-color: rgb(255, 255, 255);
+            border-radius: 8px; /* Lekerekített sarkok */   
+            border: 1px dashed blue;      /* A keret beállítása. */  
+            transition: background-color 1s; /* Lágy színváltás, és annak ideje. */   
+        }
+
+        #bt_kiszamol:hover{
+            background-color: rgb(82, 0, 56);
+            color: white;
+        }
+
+        #tb_eredmeny {
+            background-color: rgb(255, 210, 76);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Számológép</h1>
+    <form>
+        <div>
+            <label id="lb_szam1" for="tb_szam1">1. tag</label>
+            <input type="number" id="tb_szam1">
+        </div>
+        <div>
+            <label id="lb_szam2" for="tb_szam2">2. tag</label>
+            <input type="number" id="tb_szam2">
+        </div>
+        <div class="div_kozep">
+            <select id="sel_muvelet" onchange="valaszt()">
+                <option value="1">Összeadás</option>
+                <option value="2">Kivonás</option>
+                <option value="3">Szorzás</option>
+                <option value="4">Osztás</option>
+            </select>
+        </div>
+        <div class="div_kozep">
+            <button type="button" id="bt_kiszamol" onclick="szamol()">Kiszámol</button>
+        </div>
+        <div>
+            <label id="lb_eredmeny" for="tb_eredmeny">Összeg</label>
+            <input type="number" id="tb_eredmeny" readonly>
+        </div>
+    </form>
+</body>
+
+</html>
