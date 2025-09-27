@@ -1,0 +1,7 @@
+
+Az object-fit egy CSS tulajdonság, amivel megmondhatod, hogyan férjen bele egy beágyazott médiaelem
+
+képet átméretezi torzulás nélkül
+img {
+  object-fit: cover;
+}
