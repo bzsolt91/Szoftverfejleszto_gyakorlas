@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reszponzív Példa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      padding: 20px;
+      background-color: #eee;
+    }
+
+
+    .box {
+      padding: 20px;
+      color: white;
+      text-align: center;
+      margin: 10px 0;
+    }
+
+/* Mobil */
+@media (max-width: 599px) {
+  .box {
+    background: red;
+  }
+}
+
+/* Tablet */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .box {
+    background: orange;
+  }
+
+  .container {
+    background-color: #fbf66a;
+  }
+}
+
+/* Laptop */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .box {
+    background: green;
+  }
+}
+
+/* Nagy képernyő */
+@media (min-width: 1440px) {
+  .box {
+    background: blue;
+  }
+}  
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">Ez egy doboz</div>
+  </div>
+</body>
+</html>
+
+
+

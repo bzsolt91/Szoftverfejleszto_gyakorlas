@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flexbox - Függőleges gap</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column; /* <- itt váltunk oszlopos irányra */
+      gap: 15px;               /* <- a dobozok közti függőleges tér */
+      background: #ddd;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .box {
+      background: #2196f3;
+      color: white;
+      padding: 20px;
+      font-size: 20px;
+      text-align: center;
+      border-radius: 5px;
+    }
+
+    .box:nth-child(2) {
+      background: #f44336;       
+    }
+
+    .box:nth-child(3) {
+      background: #4caf50;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Flexbox – Oszlopos elrendezés gap-pel</h1>
+
+  <div class="container">
+    <!--<h2>Cím</h2>-->
+    <div class="box">Első doboz</div>
+    <div class="box">Második doboz</div>
+    <div class="box">Harmadik doboz</div>
+  </div>
+
+</body>
+</html>
+
+<!--
+Hasznos változatok:
+Szelektor	Jelentés
+.box:nth-child(1)	első gyermek
+.box:nth-child(odd)	páratlan (1., 3., 5., …)
+.box:nth-child(even)	páros (2., 4., 6., …)
+.box:nth-child(3n)	minden 3. elem (3., 6., 9., …)
+.box:last-child	utolsó gyermek
+.box:first-child	első gyermek
+-->

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex arányos példák</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      background: #ddd;
+      padding: 10px;
+      height: 100px;
+    }
+
+    .box {
+      color: white;
+      text-align: center;
+      line-height: 80px;
+      font-size: 24px;
+      border-radius: 5px;
+    }
+
+    .box1 {
+      background: #2196f3;
+      flex: 1;
+    }
+
+    .box2 {
+      background: #f44336;
+      flex: 1;
+    }
+
+    .box3 {
+      background: #4caf50;
+      flex: 2; /* ez kétszer akkora lesz */
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Flex: 1 – 1 – 2</h2>
+  <p>Az utolsó doboz kétszer akkora lesz, mint az első kettő.</p>
+
+  <div class="container">
+    <div class="box box1">1</div>
+    <div class="box box2">1</div>
+    <div class="box box3">2</div>
+  </div>
+
+</body>
+</html>

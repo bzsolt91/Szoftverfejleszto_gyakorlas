@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox példák</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f7f7f7;
+    }
+
+    h2 {
+      margin-top: 40px;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      background: #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+
+    .box {
+      background: #2196f3;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      flex: 1;
+    }
+
+    /* Oszlopba rendezés */
+    .column {
+      flex-direction: column;
+    }
+
+    /* Középre igazítás */
+    .centered {
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+    }
+
+    /* Mobil reszponzivitás */
+    @media (max-width: 600px) {
+      .responsive {
+        flex-direction: column;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Flexbox példák</h1>
+
+  <h2>1. Alap: Vízszintes elrendezés (alapértelmezett)</h2>
+  <div class="container">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+  <h2>2. Oszlopba rendezés</h2>
+  <div class="container column">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+  <h2>3. Középre igazított dobozok</h2>
+  <div class="container centered">
+    <div class="box" style="flex: none;">Középen</div>
+  </div>
+
+  <h2>4. Reszponzív Flex irány – mobilon oszlop</h2>
+  <div class="container responsive">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flexbox gap vs margin</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    .container {
+      display: flex;
+      background: #ddd;
+      padding: 10px;
+      height: 100px;
+    }
+
+    .box {
+      color: white;
+      text-align: center;
+      line-height: 80px;
+      font-size: 20px;
+      border-radius: 5px;
+      flex: 1;
+    }
+
+    .box1 { background: #2196f3; }
+    .box2 { background: #f44336; }
+    .box3 { background: #4caf50; }
+
+    /* 1. Példa: gap használatával */
+    .with-gap {
+      gap: 20px;
+    }
+
+    /* 2. Példa: margin-nal oldjuk meg */
+    .with-margin .box {
+      margin-right: 20px;
+    }
+
+    .with-margin .box:last-child {
+      margin-right: 0;
+    }
+
+    /* + egy kis konténer a vizuális kerethez */
+    .container-wrapper {
+      border: 2px dashed #aaa;
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Flexbox – gap vs margin</h1>
+
+  <h2>1. `gap` használata (ajánlott)</h2>
+  <div class="container-wrapper">
+    <div class="container with-gap">
+      <div class="box box1">1</div>
+      <div class="box box2">1</div>
+      <div class="box box3">2</div>
+    </div>
+  </div>
+
+  <h2>2. `margin` használata (régi módszer)</h2>
+  <div class="container-wrapper">
+    <div class="container with-margin">
+      <div class="box box1">1</div>
+      <div class="box box2">1</div>
+      <div class="box box3">2</div>
+    </div>
+  </div>
+
+  <p><strong>Megjegyzés:</strong> A <code>gap</code> csak az elemek között hoz létre távolságot. A <code>margin</code> viszont kihat az utolsó/első elemre is, ha nem figyelsz.</p>
+
+</body>
+</html>

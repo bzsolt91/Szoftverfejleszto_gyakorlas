@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox - wrap, order, align-self</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;  /* Sorba törés engedélyezése */
+      gap: 10px;
+      background: #ddd;
+      padding: 10px;
+      height: 200px;
+      align-items: center; /* az alap igazítás */
+    }
+
+    .box {
+      background: #2196f3;
+      color: white;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 6px;
+      flex: 0 0 30%; /* fix méret (arányosan), így lehet törés */
+      text-align: center;
+    }
+
+    .box:nth-child(2) {
+      background: #f44336;
+      order: 3; /* későbbre kerül */
+    }
+
+    .box:nth-child(3) {
+      background: #4caf50;
+      order: 1; /* előrébb kerül */
+    }
+
+    .box:nth-child(4) {
+      background: #ff9800;
+      align-self: flex-start; /* egyedi igazítás */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Flexbox haladó példák</h1>
+
+  <h2>1. flex-wrap: sorba törés</h2>
+  <h2>2. order: sorrend változtatása</h2>
+  <h2>3. align-self: egyedi igazítás</h2>
+
+  <div class="container">
+    <div class="box">Elem 1</div>
+    <div class="box">Elem 2 (order: 3)</div>
+    <div class="box">Elem 3 (order: 1)</div>
+    <div class="box">Elem 4 (align-self: start)</div>
+  </div>
+
+</body>
+</html>
+
+
+<!--
+align-self – Mit csinál?
+Egyetlen flex elem egyedi függőleges (keresztirányú) igazítását határozza meg a szülő konténeren belül.
+
+A szülő konténernek display: flex-nek kell lennie!
+
+Lehetséges értékek
+Érték	Mit csinál?
+auto	Alapértelmezett – örökli a szülő align-items értékét
+flex-start	Felülre igazítja az elemet
+flex-end	Alulra igazítja
+center	Középre igazítja
+baseline	A szövegsor alapvonalához igazítja
+stretch (alap)	Kitölti a teljes keresztirányt (ha nincs fix méret)
+
+
+Ezek a paraméterek:
+flex-grow: 1;
+flex-shrink: 1;
+flex-basis: 0;
+
+
+A ChatGPT ezt mondta:
+Természetesen, nézzük meg őket részletesen! Ezek a flex tulajdonság alkotóelemei, amelyek szabályozzák, hogyan oszlik meg a hely a flex-konténeren belül az elemek között.
+
+🔧 A három paraméter:
+css
+Másolás
+Szerkesztés
+flex-grow: 1;
+flex-shrink: 1;
+flex-basis: 0;
+Együtt így néz ki shorthand formában:
+
+css
+Másolás
+Szerkesztés
+flex: 1 1 0;
+Most bontsuk szét és nézzük meg egyesével:
+
+1. flex-grow: 1
+Ez megmondja, mekkora arányban nőhet meg az elem, ha van plusz hely a konténerben.
+
+1 → az elem növekedhet, és egyenlő arányban osztozik a többi hasonló elemmel.
+
+0 → nem nő, fix méretű marad.
+
+Példa:
+Ha 3 elem van, mindegyik flex-grow: 1, akkor egyenlően osztoznak a helyen.
+
+2. flex-shrink: 1
+Ez azt határozza meg, mekkora arányban zsugorodhat az elem, ha nincs elég hely.
+
+1 → az elem arányosan összemehet.
+
+0 → nem zsugorodik, inkább túlcsordul (overflow).
+
+3. flex-basis: 0
+Ez az alapértelmezett méret még a grow és shrink előtt.
+
+0 → az elem növekedése/zsugorodása teljesen a flex-grow és flex-shrink alapján történik
+
+ha például flex-basis: 100px, akkor az elem alapból 100px széles lesz, és onnan nő/zsugorodik
+
+🎯 Mit jelent a flex: 1 1 0?
+flex-grow: 1 → osztozik a plusz helyen
+
+flex-shrink: 1 → zsugorodik, ha kell
+
+flex-basis: 0 → nincs alapméret, minden hely a grow alapján oszlik
+
+Ez egy nagyon gyakori beállítás egyforma méretű, rugalmas elemekhez.
+
+📦 Gyakorlati példa
+html
+Másolás
+Szerkesztés
+<div class="container">
+  <div class="box">A</div>
+  <div class="box">B</div>
+  <div class="box">C</div>
+</div>
+css
+Másolás
+Szerkesztés
+.container {
+  display: flex;
+  width: 600px;
+}
+
+.box {
+  flex: 1 1 0;
+  background: lightblue;
+  margin: 5px;
+  text-align: center;
+}
+Itt mindhárom .box ugyanakkora szélességet fog kapni, és alkalmazkodik a szülő konténer méretéhez.
+
+Ha szeretnéd, mutathatok példát arra is, hogy mi történik, ha különböző flex-grow értékeket adunk (pl. 1, 2, 3) – látványos lesz! Érdekel?
+
+
+
+
+
+
+
+Ezt mondtad:
+Ezt értelmezd:
+flex: 0 0 30%;
+
+
+A ChatGPT ezt mondta:
+Nagyon jó kérdés! Nézzük meg részletesen, mit jelent:
+
+css
+Másolás
+Szerkesztés
+flex: 0 0 30%;
+Ez a flex shorthand (rövidített) forma, ami valójában így bontható ki:
+
+css
+Másolás
+Szerkesztés
+flex-grow: 0;
+flex-shrink: 0;
+flex-basis: 30%;
+🎯 Mit jelent ez pontosan?
+1. flex-grow: 0
+👉 Nem fog nőni, még akkor sem, ha lenne plusz hely a flex-konténerben.
+
+2. flex-shrink: 0
+👉 Nem zsugorodik, még akkor sem, ha túl kevés a hely a konténerben. Ez akár túlcsordulást (overflow) is okozhat!
+
+3. flex-basis: 30%
+👉 Az elem alapértelmezett mérete 30% a szülő konténer szélességéből (vagy magasságából, ha oszlopirányú a flex).
+
+🔍 Összefoglalva
+Az elem fixen 30%-os szélességű lesz, sem nőni, sem csökkenni nem fog, függetlenül attól, mennyi hely áll rendelkezésre.
+
+Ez gyakorlatilag úgy viselkedik, mint egy fix százalékos szélesség, de Flexbox környezeten belül, így a többi flex elemhez igazodik.
+
+
+
+-->
