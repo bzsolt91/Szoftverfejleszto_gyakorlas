@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Könyveink</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 300px);
+      gap: 40px 100px;
+      justify-content: center;
+    }
+
+    .konyv {
+      height: 170px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      display: flex;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background-color: #fff;
+    }
+
+    .konyv img {
+      width: 90px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-right: 10px;
+    }
+
+    .konyvinfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .konyvinfo .szerzo {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .konyvinfo .cim {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .konyvinfo .kiadas_eve {
+      font-size: 14px;
+      color: #0073e6;
+    }
+
+    </style>
+</head>
+<body>
+
+<h1>Könyveink</h1>
+  <div class="grid-container">
+    <div class="konyv">
+      <img src="images/konyv1.jpg" alt="Könyv1">
+      <div class="konyvinfo">
+        <div class="szerzo">Szabó Katalin</div>
+        <div class="cim">Viharos hang a csendben</div>
+        <div class="kiadas_eve">2010</div>
+      </div>
+    </div>
+    <div class="konyv">
+      <img src="images/konyv2.jpg" alt="Könyv2">
+      <div class="konyvinfo">
+        <div class="szerzo">Dudás Gábor</div>
+        <div class="cim">Elveszett szív az időn túl</div>
+        <div class="kiadas_eve">2004</div>
+      </div>
+    </div>
+    <div class="konyv">
+      <img src="images/konyv3.jpg" alt="Könyv3">
+      <div class="konyvinfo">
+        <div class="szerzo">Budai Viktória</div>
+        <div class="cim">Viharos ősz az éjben</div>
+        <div class="kiadas_eve">2004</div>
+      </div>
+    </div>
+  </div>    
+</body>
+</html>
