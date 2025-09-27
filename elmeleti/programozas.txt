@@ -1,0 +1,13 @@
+java script framework:
+-react (facebook)
+-angular(google)
+-Vue()
+
+
+mobile programozás:
+-java
+-flutter
+-kotlin
+-react native
+-objective-c(ios)
+-Swift(ios) 
