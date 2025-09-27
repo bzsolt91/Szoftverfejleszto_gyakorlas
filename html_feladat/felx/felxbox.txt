@@ -36,7 +36,7 @@ align-items: center; – 🎯 Igazítás függőlegesen (kereszttengely mentén)
 	stretch ↕️ kitölti a teljes magasságot
 	baseline 📏 a szöveg alapvonalához igazít
 
-flex: 1; – ⚖️ Rugalmas méretezés: mindhárom gyerek egyforma szélességet kap.
+flex: 1; – ⚖️ Arány, Rugalmas méretezés: mindhárom gyerek egyforma szélességet kap.
 
 flex-direction
 
