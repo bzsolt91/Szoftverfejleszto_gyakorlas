@@ -23,18 +23,18 @@
 display: flex; – 🧩 Rugalmas elrendezés: a <div class="container"> lesz a flex-konténer, a benne lévő elemek pedig flex-elemek.
 gap: 10px; – ↔ Térköz: 10px helyet hagy az elemek között (nem kell külön margin).
 justify-content: – 📏 Elosztás vízszintesen (ha flex-direction: row):
-	lex-start ⬅️➡️ elemek balra igazítva
-	lex-end ➡️➡️ elemek jobbra igazítva
+	fex-start ⬅️➡️ elemek balra igazítva
+	flex end ➡️➡️ elemek jobbra igazítva
 	enter 🎯 elemek középre rakva
-	pace-between 🔀 első az elején, utolsó a végén, a többi egyenlően osztva
-	pace-around ➖ egyenlő hely minden elem körül
-	pace-evenly 🟰 teljesen egyenlő távolság mindenhol
+	space-between 🔀 első az elején, utolsó a végén, a többi egyenlően osztva
+	space-around ➖ egyenlő hely minden elem körül
+	space-evenly 🟰 teljesen egyenlő távolság mindenhol
 align-items: center; – 🎯 Igazítás függőlegesen (kereszttengely mentén):
-	lex-start ⬆️ tetejére igazít
-	lex-end ⬇️ aljára igazít
-	enter 🎯 függőleges közép
-	tretch ↕️ kitölti a teljes magasságot
-	aseline 📏 a szöveg alapvonalához igazít
+	flex-start ⬆️ tetejére igazít
+	flex-end ⬇️ aljára igazít
+	center 🎯 függőleges közép
+	stretch ↕️ kitölti a teljes magasságot
+	baseline 📏 a szöveg alapvonalához igazít
 
 flex: 1; – ⚖️ Rugalmas méretezés: mindhárom gyerek egyforma szélességet kap.
 
