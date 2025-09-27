@@ -1,23 +1,39 @@
-php keretrendszer:
--Xamarin
--Laravel
--Symfony
--CodeIgniter
--Yii Framework
--CakePHP
--Slim
+🐘 PHP keretrendszerek
 
-java script framework:
--react (facebook)
--angular(google)
--Vue(evan ue)
--Svelte
+🔧 Laravel
 
+🔧 Symfony
 
-mobile programozás:
--java
--flutter
--kotlin
--react native
--objective-c(ios)
--Swift(ios) 
+🔧 CodeIgniter
+
+🔧 Yii Framework
+
+🔧 CakePHP
+
+🔧 Slim
+
+⚡ JavaScript keretrendszerek
+
+⚛ React (Meta/Facebook)
+
+🅰 Angular (Google)
+
+🌱 Vue.js (Evan You)
+
+🔥 Svelte
+
+📱 Mobilfejlesztési technológiák
+
+☕ Java
+
+🟣 Kotlin
+
+🎯 Flutter
+
+⚛ React Native
+
+🍏 Objective-C (iOS)
+
+🍎 Swift (iOS)
+
+🪟 Xamarin (.NET alapú, többplatformos)
