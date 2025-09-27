@@ -1,3 +1,5 @@
+🎨 A CSS (Cascading Style Sheets) a HTML megjelenését szabályozza: színek, betűk, méretek, elrendezés.
+
 
 Az object-fit egy CSS tulajdonság, amivel megmondhatod, hogyan férjen bele egy beágyazott médiaelem
 
@@ -5,3 +7,87 @@ képet átméretezi torzulás nélkül
 img {
   object-fit: cover;
 }
+
+🎯 Gyakori tulajdonságok
+
+Színek és háttér
+
+color: red; 🎨 szöveg színe
+
+background-color: #f0f0f0; 🎨 háttérszín
+
+background-image: url("kep.jpg");
+
+Szöveg
+
+font-size: 16px; 🔤 betűméret
+
+font-weight: bold; 💪 vastag
+
+text-align: center; 🎯 igazítás
+
+text-decoration: none; 🚫 aláhúzás eltüntetése
+
+Dobozmodell
+
+width / height 📏 méret
+
+margin ↔ külső térköz
+
+padding ↔ belső térköz
+
+border ⬜ keret
+
+box-sizing: border-box; 📦 keret és padding beleszámít a méretbe
+
+Megjelenítés
+
+display: block; 📦 blokk elem
+
+display: inline; 📄 sorba illeszkedő
+
+display: flex; ➡️ rugalmas elrendezés
+
+display: grid; 🧩 rácsos elrendezés
+
+Pozicionálás
+
+position: static; (alap)
+
+position: relative; ↔ eltolható
+
+position: absolute; 📍 a szülőhöz képest pozícionált
+
+position: fixed; 📌 képernyőhöz rögzített
+
+top, left, right, bottom 📐 helyzet megadása
+
+Átlátszóság és árnyék
+
+opacity: 0.5; 🌫 félig áttetsző
+
+box-shadow: 0 4px 10px rgba(0,0,0,0.3); 🌑 árnyék
+
+Animáció és átmenet
+
+transition: all 0.3s ease; 🎞 finom átmenet
+
+transform: rotate(10deg); 🔄 forgatás
+
+animation: nev 2s infinite; 🎬 animáció futtatása
+
+
+🧠 CSS szelektorok gyorsan
+
+p → minden <p>
+
+.class → class szerint
+
+#id → id szerint
+
+div > p → közvetlen gyerek
+
+div p → minden leszármazott
+
+p:hover → hover állapot
+
