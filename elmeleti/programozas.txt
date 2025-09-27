@@ -1,7 +1,17 @@
+php keretrendszer:
+-Xamarin
+-Laravel
+-Symfony
+-CodeIgniter
+-Yii Framework
+-CakePHP
+-Slim
+
 java script framework:
 -react (facebook)
 -angular(google)
--Vue()
+-Vue(evan ue)
+-Svelte
 
 
 mobile programozás:
