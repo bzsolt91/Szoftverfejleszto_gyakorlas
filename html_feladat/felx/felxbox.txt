@@ -1,0 +1,46 @@
+<div class="container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+
+.container {
+  display: flex;              /* 📺 A szülő flex-konténer lesz */
+  justify-content: space-between; /* 📏 Elem elosztás a főtengely mentén */
+  align-items: center;        /* 🎯 Igazítás a kereszttengely mentén */
+  gap: 10px;                  /* ↔ Közök a gyermekek között */
+}
+
+.container div {
+  flex: 1; /* ⚖️ Minden gyerek egyforma szélességű lesz */
+}
+
+.container {
+  display: flex;
+  flex-direction: row; /* vagy column, row-reverse, column-reverse */
+}
+
+display: flex; – 🧩 Rugalmas elrendezés: a <div class="container"> lesz a flex-konténer, a benne lévő elemek pedig flex-elemek.
+gap: 10px; – ↔ Térköz: 10px helyet hagy az elemek között (nem kell külön margin).
+justify-content: – 📏 Elosztás vízszintesen (ha flex-direction: row):
+	lex-start ⬅️➡️ elemek balra igazítva
+	lex-end ➡️➡️ elemek jobbra igazítva
+	enter 🎯 elemek középre rakva
+	pace-between 🔀 első az elején, utolsó a végén, a többi egyenlően osztva
+	pace-around ➖ egyenlő hely minden elem körül
+	pace-evenly 🟰 teljesen egyenlő távolság mindenhol
+align-items: center; – 🎯 Igazítás függőlegesen (kereszttengely mentén):
+	lex-start ⬆️ tetejére igazít
+	lex-end ⬇️ aljára igazít
+	enter 🎯 függőleges közép
+	tretch ↕️ kitölti a teljes magasságot
+	aseline 📏 a szöveg alapvonalához igazít
+
+flex: 1; – ⚖️ Rugalmas méretezés: mindhárom gyerek egyforma szélességet kap.
+
+flex-direction
+
+	 row → vízszintes sor, balról jobbra
+	 row-reverse → vízszintes sor, jobbról balra
+	 column → függőleges oszlop, felülről lefelé
+	 column-reverse → függőleges oszlop, alulról felfelé
