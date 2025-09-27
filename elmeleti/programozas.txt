@@ -1,39 +1,25 @@
 🐘 PHP keretrendszerek
 
-🔧 Laravel
-
-🔧 Symfony
-
-🔧 CodeIgniter
-
-🔧 Yii Framework
-
-🔧 CakePHP
-
-🔧 Slim
+	🔧 Laravel
+	🔧 Symfony
+	🔧 CodeIgniter
+	🔧 Yii Framework
+	🔧 CakePHP
+	🔧 Slim
 
 ⚡ JavaScript keretrendszerek
 
-⚛ React (Meta/Facebook)
-
-🅰 Angular (Google)
-
-🌱 Vue.js (Evan You)
-
-🔥 Svelte
+	⚛ React (Meta/Facebook)
+	🅰 Angular (Google)
+	🌱 Vue.js (Evan You)
+	🔥 Svelte
 
 📱 Mobilfejlesztési technológiák
 
-☕ Java
-
-🟣 Kotlin
-
-🎯 Flutter
-
-⚛ React Native
-
-🍏 Objective-C (iOS)
-
-🍎 Swift (iOS)
-
-🪟 Xamarin (.NET alapú, többplatformos)
+	☕ Java
+	🟣 Kotlin
+	🎯 Flutter
+	⚛ React Native
+	🍏 Objective-C (iOS)
+	🍎 Swift (iOS)
+	🪟 Xamarin (.NET alapú, többplatformos)
