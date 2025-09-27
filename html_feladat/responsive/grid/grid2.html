@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grid - Több oszlopot/sort átfogó elem</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 100px 100px 100px;
+      gap: 10px;
+      padding: 20px;
+      background-color: #ecf0f1;
+    }
+
+    .grid-item {
+      background-color: #3498db;
+      color: white;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+    }
+
+    /* Ez az elem több oszlopot fog átfogni */
+    .span-columns {
+      grid-column: 2 / 4; /* 2. oszloptól a 4. oszlopig (nem tartalmazza a 4-et) */
+      background-color: #e74c3c;
+    }
+
+    /* Ez az elem több sort fog átfogni */
+    .span-rows {
+      grid-row: 1 / 3; /* 1. sortól a 3. sorig (nem tartalmazza a 3-at) */
+      background-color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Grid több oszlopot és sort átfogó elem</h1>
+
+  <div class="grid-container">
+    <div class="grid-item">1</div>
+    <div class="grid-item span-columns">2 (2 oszlop)</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item span-rows">5 (2 sor)</div>
+    <div class="grid-item">6</div>
+  </div>
+
+</body>
+</html>

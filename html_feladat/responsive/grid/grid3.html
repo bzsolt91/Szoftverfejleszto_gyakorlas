@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grid példa span és start használattal</title>
+  <style>
+    .parent {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 100px);
+      gap: 8px;
+      width: 600px;
+      margin: 20px auto;
+      background-color: #f0f0f0;
+      padding: 10px;
+      border: 2px solid #ccc;
+      font-family: Arial, sans-serif;
+    }
+
+    .parent > div {
+      background-color: #3498db;
+      color: white;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+      font-size: 1.2rem;
+    }
+
+    .div3 {
+      grid-column: span 2 / span 2; /* 2 oszlop széles */
+      grid-row-start: 2;             /* 2. sortól kezdődik */
+      background-color: #e74c3c;
+    }
+
+    .div4 {
+      grid-row: span 2 / span 2;     /* 2 sort foglal */
+      grid-row-start: 3;             /* 3. sortól kezdődik */
+      background-color: #27ae60;
+    }
+
+    .div5 {
+      grid-row-start: 3;             /* 3. sortól kezdődik, 1 sort foglal */
+      background-color: #f39c12;
+    }
+
+    .div6 {
+      grid-column-start: 2;          /* 2. oszlopban kezd */
+      grid-row-start: 4;             /* 4. sortól kezdődik */
+      background-color: #8e44ad;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Grid példa: span és start használat</h1>
+
+  <div class="parent">
+    <div class="div1">1</div>
+    <div class="div2">2</div>
+    <div class="div3">3 (span 2 oszlop, start row 2)</div>
+    <div class="div4">4 (span 2 sor, start row 3)</div>
+    <div class="div5">5 (start row 3)</div>
+    <div class="div6">6 (start col 2, start row 4)</div>
+  </div>
+
+</body>
+</html>

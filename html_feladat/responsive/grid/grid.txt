@@ -1,0 +1,28 @@
+az egyes elemeket önmagában tartalmazza
+
+
+.container {
+  display: grid; /* 🧩 bekapcsolja a rácsot */
+  grid-template-columns: 1fr 1fr 1fr; /* 📏 3 egyenlő oszlop */ - fr fenmmaradó hely osztása 1 fr 1 egység 2 fr 2 egység
+  grid-template-rows: auto auto;      /* ↕ két sor automatikus magassággal */
+  gap: 10px; /* ↔↕ térköz a rács cellái között */
+}
+
+📐 Főbb tulajdonságok
+Konténeren (szülőn)
+	display: grid – 🧩 Rács bekapcsolása
+	grid-template-columns – 📏 Oszlopok szélességepl. 200px 1fr 1fr → első fix 200px, a többi arányosan osztozik
+	repeat(3, 1fr) → 3 egyforma oszlop
+	grid-template-rows – ↕ Sorok magasságapl. auto 100px → első automatikus, második fix 100px
+	gap – ↔↕ Térköz sorok és oszlopok közöttvagy külön: row-gap, column-gap
+	justify-items – 📏 Igazítás vízszintesen cellán belül start, end, center, stretch
+
+	align-items – 🎯 Igazítás függőlegesen cellán belül start, end, center, stretch
+	justify-content / align-content – 📦 Az egész rács pozicionálása a konténerben
+
+Gyereken (elemeken)
+
+	grid-column – 📊 Oszlop kiterjedés pl. grid-column: 1 / 3; → elsőtől harmadik oszlopig nyúlik
+	grid-row – 📊 Sor kiterjedés pl. grid-row: 2 / 4; → másodiktól negyedik sorig
+	justify-self – 📏 Egy elem vízszintes igazítása
+	align-self – 🎯 Egy elem függőleges igazítása
