@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Példa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #keresoMezo {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px 15px;
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            outline: none;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        #keresoMezo:focus {
+            border-color: teal;
+            box-shadow: 0 0 8px rgba(0,128,128,0.5);
+        }
+
+        #tartalom {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .d {
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .d:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+        }
+
+        .egy, .ketto, .harom {
+            padding: 8px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
+        .egy { background: #ffad60; }
+        .ketto { background: #4fc3a1; }
+        .harom { background: #d9534f; }
+
+        p {
+            text-align: center;
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <input id="keresoMezo" oninput="xmlkeres()" placeholder="Írj be valamit...">
+    <div id="tartalom"></div>
+
+<script>
+    function xmlkeres() {
+        const mezo = document.getElementById('keresoMezo');
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'backend.php', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const data = JSON.parse(xhr.responseText);
+                megjelenites(data);
+            }
+        }
+
+        const parameter = "nev=" + encodeURIComponent(mezo.value);
+        xhr.send(parameter);
+    }
+
+    function megjelenites(adat) {
+        const tartalomDiv = document.getElementById("tartalom");
+
+        if (!adat || adat.length === 0) {
+            tartalomDiv.innerHTML = "<p>Nincs adat</p>";
+            return;
+        }
+
+        let tabla = "";
+        for (const sor of adat) {
+            tabla += `
+                <div class="d">
+                    <div class="egy">${sor.versenyzo_neve || ""}</div>
+                    <div class="ketto">${sor.versenyzo_helyezese || ""}</div>
+                    <div class="harom">${sor.versenyzo_rajtszama || ""}</div>
+                </div>
+            `;
+        }
+        tartalomDiv.innerHTML = tabla;
+    }
+
+    // induláskor is töltsön
+    window.onload = xmlkeres;
+</script>
+</body>
+</html>
