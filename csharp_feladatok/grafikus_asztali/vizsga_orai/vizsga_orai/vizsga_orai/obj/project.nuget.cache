@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "d3OezikG51Q=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\benei\\Downloads\\18\\18\\vizsga_orai\\vizsga_orai\\vizsga_orai\\vizsga_orai.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\benei\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\benei\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\benei\\.nuget\\packages\\mysqlconnector\\2.4.0\\mysqlconnector.2.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

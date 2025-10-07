@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    /* Belső elemek (név, helyezés) */
+    .neve, .helyezese {
+        padding: 8px;
+        border-radius: 6px;
+        text-align: center;
+        background-color: lightblue;
+        border: 1px solid #004b6b;
+        margin-top: 5px;
+    }
+
+    /* Külső konténer (doboz) */
+    .doboz {
+        padding: 10px;
+        background-color: rgb(54, 81, 161);
+        border: 3px solid black; /* jól látható vastag keret */
+        border-radius: 10px;
+        
+        color: white;
+        font-weight: bold;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .doboz:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+
+    /* Elrendezés */
+    #tartalom {
+        display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(220px, 220px)); /* fix szélességű dobozok */
+        max-width: 800px;
+        margin: auto;
+        gap: 50px;
+        margin-top: 10px;
+    }
+</style>
+    <script>
+function lekeres()
+{
+    const nev = document.getElementById('nev').value;
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST','backend.php',true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function()
+    {
+        if(xhr.status==200 && xhr.readyState==4)
+    {
+        const adatok = JSON.parse(xhr.responseText);
+        megjelenites(adatok);
+    }
+   
+    } 
+    const parameterek = "nev="+encodeURIComponent(nev);
+    xhr.send(parameterek);
+}
+function megjelenites(adatok)
+{
+    const divtartalom = document.getElementById('tartalom');
+    if(adatok.length===0)
+        {
+            divtartalom.innerHTML="<p>Nincs eredmény</p>";
+            return;
+        }
+    var tabla="";
+        for(const sor of adatok)
+    {
+        tabla+="<div class=\"doboz\">";
+        tabla+= "<div class=\"neve\">"+ sor.versenyzo_neve+"</div>";
+        tabla+= "<div class=\"helyezese\">"+ sor.versenyzo_helyezes+"</div>";
+        tabla+="</div>";
+    }
+  
+    divtartalom.innerHTML=tabla;
+}
+        </script>
+</head>
+<body>
+    <div >
+    <input id="nev" placeholder="ide írja be" oninput="lekeres()">
+    <div id="tartalom" ></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td
+        {
+       
+        
+           
+            padding: 10px;
+     
+        }
+    
+@media screen and (min-width:600px)
+{
+    table, th, td
+    {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    
+}
+td {
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: lightblue;
+  
+}
+
+
+        </style>
+    <script>
+        function kereses()
+        {
+            const nev = document.getElementById('keresoMezo').value;
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST','backend.php',true);
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function()
+            {
+                if(xhr.readyState==4 && xhr.status ==200)
+            {
+                const adatok = JSON.parse(xhr.responseText);
+                megjelenit(adatok);
+            }
+
+            }   
+            const parameterek = "nev=" + encodeURIComponent(nev);
+            xhr.send(parameterek);
+        }
+        function megjelenit(adatok)
+        {
+            const tartalom = document.getElementById('tartalom');
+                if(adatok.length===0)
+                    tartalom.innerHTML = "Nincs adat."
+                else
+                {
+                  var  tabla ="<table><th>valami</th><th>v2</th>"; 
+                    for(const sor of adatok)
+                {
+                    tabla +="<tr>";
+                    tabla +="<td>adat1:"+ sor.versenyzo_neve +"</td>";
+                    tabla += "<td>adat2:"+ sor.versenyzo_helyezese+"</td>";
+                    tabla +"</tr>";
+                }
+                tabla+="</table>";
+                 tartalom.innerHTML=tabla;
+                }
+               
+        }
+        window.onload= kereses;
+        </script>
+</head>
+<body>
+    <div>
+        <input id="keresoMezo" placeholder="Iírjon be valamit" oninput="kereses()">
+    <div id="tartalom"></div>
+        </div>
+</body>
+</html>
