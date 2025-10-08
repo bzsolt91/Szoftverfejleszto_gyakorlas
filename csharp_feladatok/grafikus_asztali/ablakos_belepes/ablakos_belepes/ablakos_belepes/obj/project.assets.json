@@ -1666,26 +1666,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\benei\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\works\\oktav\\szf_24_25\\desktop\\7\\ablakos_belepes\\ablakos_belepes\\ablakos_belepes\\ablakos_belepes.csproj",
+      "projectUniqueName": "C:\\Users\\benei\\Documents\\szoftverfejleszto_gyakorlas\\Szoftverfejleszto_gyakorlas\\csharp_feladatok\\grafikus_asztali\\ablakos_belepes\\ablakos_belepes\\ablakos_belepes\\ablakos_belepes.csproj",
       "projectName": "ablakos_belepes",
-      "projectPath": "D:\\works\\oktav\\szf_24_25\\desktop\\7\\ablakos_belepes\\ablakos_belepes\\ablakos_belepes\\ablakos_belepes.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\works\\oktav\\szf_24_25\\desktop\\7\\ablakos_belepes\\ablakos_belepes\\ablakos_belepes\\obj\\",
+      "projectPath": "C:\\Users\\benei\\Documents\\szoftverfejleszto_gyakorlas\\Szoftverfejleszto_gyakorlas\\csharp_feladatok\\grafikus_asztali\\ablakos_belepes\\ablakos_belepes\\ablakos_belepes\\ablakos_belepes.csproj",
+      "packagesPath": "C:\\Users\\benei\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\benei\\Documents\\szoftverfejleszto_gyakorlas\\Szoftverfejleszto_gyakorlas\\csharp_feladatok\\grafikus_asztali\\ablakos_belepes\\ablakos_belepes\\ablakos_belepes\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\benei\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1709,9 +1702,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -1741,7 +1734,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

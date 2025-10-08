@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ablakos_belepes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+acd25b08423b7659a8de22e8f4021555a32b1581")]
 [assembly: System.Reflection.AssemblyProductAttribute("ablakos_belepes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ablakos_belepes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
