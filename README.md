@@ -1,5 +1,5 @@
 „Üdvözlök mindenkit!
-A nevem Benei Zsolt, és csapattársammal, Vukovics Liliánával közösen készítettük el az Utazáskezelő nevű szoftverünket.
+Személy szerint Benei Zsolt vagyok, és csapattársammal, Vukovics Liliánával közösen készítettük el az Utazáskezelő nevű szoftverünket.
 Ez egy olyan rendszer, amely utazási irodák és utazásszervezők munkáját segíti, egy központi adatbázisra épülve.
 
 A program célja, hogy áttekinthetően kezelhetővé tegye az utazásokat, az utasokat és az előfoglalásokat, valamint statisztikai adatokat is biztosítson a döntéshozáshoz.
