@@ -1,0 +1,72 @@
+1. git checkout – átváltás branch-re vagy commit-re
+
+Branch-re váltás:
+
+git checkout main
+git checkout fejlesztes
+
+
+Új branch létrehozása és váltás:
+
+git checkout -b uj-feature
+
+
+Korábbi commit-re váltás (detached HEAD):
+
+git checkout abc1234
+
+2. git remote – távoli repository kezelése
+
+Távoli repository-k listázása:
+
+git remote -v
+
+
+Új távoli repository hozzáadása:
+
+git remote add origin https://github.com/felhasznalo/projekt.git
+
+
+Távoli repository eltávolítása:
+
+git remote remove origin
+
+
+Távoli branch lekérése (fetch):
+
+git fetch origin
+
+3. Branch törlése
+
+Lokális branch törlése:
+
+git branch -d fejlesztes        # biztonságos törlés (ha már merge-elve)
+git branch -D fejlesztes        # erőltetett törlés
+
+
+Távoli branch törlése:
+
+git push origin --delete fejlesztes
+
+4. Egyéb hasznos parancsok
+
+Lokális változtatások visszaállítása:
+
+git restore fájl.txt             # fájl visszaállítása utolsó commit állapotára
+git restore .                    # minden fájl visszaállítása
+
+
+Commit létrehozása:
+
+git add .
+git commit -m "Commit üzenet"
+
+
+Push a távoli repository-ba:
+
+git push origin main
+
+
+Pull a távoli változtatásokhoz:
+
+git pull origin main
