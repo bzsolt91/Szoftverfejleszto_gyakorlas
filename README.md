@@ -12,5 +12,8 @@ Ehhez kapcsolódva alakítottuk ki az alkalmazás logikáját és felépítésé
 Liliána elsősorban a webes felületért és a vizuális stílusért felelt,
 én pedig az adatbázist és az asztali program fejlesztését készítettem el.
 
+A program stílusa modern, követi a mai letisztult vizuális stílusokat. Na de miért van erre szükség egy adminisztrációs programnál, a válasz egyszerű növelhető vele az emberi munka hatékonysága,
+hiszen ha barátságosabb a felület a munka is könnyebben elviselhetőbb átláthatóbb.
+
 A fejlesztés során távoli együttműködéssel, messengeren és telefonon egyeztettünk, így minden munkafázist online hangoltunk össze.
 A következőkben bemutatom röviden az alkalmazás felépítését és főbb funkcióit.”
