@@ -1,44 +1,88 @@
-#content {
-    
-  width: 888px;
-  margin: 0 auto;
+body{
+    background-color: forestgreen;
 }
-
-h1, h2 {
-  text-transform: uppercase;
-  color: forestgreen;
+#content{
+max-width: 888px;
+    width: auto;
+    margin: 0 auto;
+    background-color: azure;
+    border-radius: 20px;
+    border: 1px solid black;
+    padding: 20px;
 }
-
-p, ul, ol {
-  text-align: justify;
-}
-
-.kepszoveg {
-  font-weight: bold;
-  font-style: italic;
-  text-align: center;
-}
-
-#imageleft {
-  margin-right: 40px;
-  margin-bottom: 80px;
-}
-
 #imageright {
-  margin-left: 20px;
+    float: right;
+    width: 200px;
+    height: 300px;
+    margin-left: 20px;
+    border: 1px solid forestgreen;
+    border-radius: 20px;
+    overflow: hidden; /* a kép és p ne lógjon ki */
+
 }
 
-#imageleft img,
 #imageright img {
-  width: 300px;
-  height: auto;
+    width: 100%;
+    height: 281px;
+    object-fit: fill;
+   
+    display: block;
 }
 
-a:link,
-a:visited {
-  color: blue;
+#imageright p {
+    
+    background-color: goldenrod;
+    color: white;
+    margin: 0;
+    text-align: center;
+   
+
+}
+#imageleft {
+    float: left;
+    width: 250px;
+    height: auto;
+    margin-right: 40px;
+    margin-bottom: 50px;
+    border: 1px solid forestgreen;
+    border-radius: 20px;
+    overflow: hidden;
+   
 }
 
-a:hover {
-  color: red;
+#imageleft img {
+    width: 100%;
+   
+    object-fit: cover;
+
+    display: block;
+}
+
+#imageleft p {
+    background-color: goldenrod;
+    color: white;
+    margin: 0;
+    text-align: center;
+  
+
+}
+.kepszoveg{
+	font-weight: bold;
+    font-style: italic;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: blue;
+}
+a:hover{
+    color: red;
+}
+h1,h2{
+    text-transform: uppercase;
+    color: forestgreen;
+}
+p,li{
+    text-align: justify;
+     text-indent: 2em; 
 }
