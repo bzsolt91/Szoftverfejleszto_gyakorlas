@@ -1,5 +1,5 @@
 #content{
-	
+	width: 888px;
 }
 #imageright{
 	
@@ -8,5 +8,13 @@
 	
 }
 .kepszoveg{
-	
+	font-style: bold italic;
+   text-align: center;
+}
+h1,h2{
+    color: forestgreen;
+}
+p{
+   
+    text-align: justify;
 }
