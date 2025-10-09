@@ -52,6 +52,11 @@ display: grid; 🧩 rácsos elrendezés
 
 Pozicionálás
 
+
+linkelés:
+
+ <link rel="stylesheet" type="text/css" href="style.css">
+
 position: static; (alap)
 
 position: relative; ↔ eltolható
